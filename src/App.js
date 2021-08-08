@@ -18,7 +18,7 @@ function App() {
   const skillsRef = useRef()
   const projectRef = useRef()
   const contactRef = useRef()
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="App">

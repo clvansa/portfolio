@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 const SkillProgress = ({ type }) => {
   const [array, setArray] = useState([]);
-  console.log(type);
 
   useEffect(() => {
     setArray(skills.find((skill) => skill[type]));
@@ -43,7 +42,7 @@ const SkillProgress = ({ type }) => {
       ],
     },
   ];
-  Object.values(array).map((a) => console.log(a[0].title));
+
 
   return (
     <ProgressLists>
