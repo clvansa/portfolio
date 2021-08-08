@@ -16,7 +16,7 @@ export default () => {
       <SwiperSlide key={`slide-${i}`} tag="li" style={{ borderRadius: "20px",listStyle: "none" }}>
         <img
           src={`https://picsum.photos/id/${i + 1}/500/300`}
-          style={{ listStyle: "none", borderRadius: "20px" }}
+          style={{ listStyle: "none", borderRadius: "20px",width:"100%" }}
           alt={`Slide ${i}`}
         />
       </SwiperSlide>

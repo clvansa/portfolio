@@ -6,7 +6,7 @@ const AboutMe = () => {
   return (
     <Container>
       <Title>I AM </Title>
-      <Title > Web Developer</Title>
+      <Title> Web Developer</Title>
       <SubTitle>Full-Stack Web Entwickler </SubTitle>
       <TextAboutMe>
         Full-Stack Web Entwickler mit mehr als 7Jahren Erfahrung in der
@@ -47,14 +47,17 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
-  width: 600px;
+  width: 500px;
 
-
-  @media (max-width: 650px){
-    padding-left:20px;
+  @media (max-width: 650px) {
+    padding-left: 20px;
     width: 400px;
   }
- 
+
+  @media (max-width: 450px) {
+    padding: 20px 0;
+    width: fit-content;
+  }
 `;
 const Title = styled.h1`
   font-size: 3.2rem;
@@ -62,9 +65,13 @@ const Title = styled.h1`
   text-align: center;
   font-weight: 900;
 
-  @media (max-width: 650px){
+  @media (max-width: 650px) {
     font-size: 1.5rem;
     width: 200px;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 1.3rem;
   }
 `;
 const SubTitle = styled.h5`
@@ -76,8 +83,7 @@ const SubTitle = styled.h5`
 
   text-align: center;
 
-
-  @media (max-width: 650px){
+  @media (max-width: 650px) {
     font-size: 0.5rem;
     width: 200px;
   }
@@ -89,9 +95,14 @@ const TextAboutMe = styled.p`
   padding-left: 5px;
   text-align: left;
 
-  @media (max-width: 650px){
-    padding-left:20px;
+  @media (max-width: 650px) {
+    padding-left: 20px;
     width: 300px;
+  }
+
+  @media (max-width: 450px) {
+    padding: 0 20px;
+    width: fit-content;
   }
 `;
 
@@ -108,9 +119,9 @@ const Button = styled.button`
   /* width: 400px; */
   text-align: center;
 
-  &:hover{
-    outline:1px solid red;
-    background-color:transparent;
+  &:hover {
+    outline: 1px solid red;
+    background-color: transparent;
   }
 `;
 

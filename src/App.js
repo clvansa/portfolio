@@ -25,8 +25,8 @@ function App() {
         <PageTitle >Majd</PageTitle>
         <ContainerInner>
           <ContainerInnerTop>
-            <div ref={aboutRef}>
-              <AboutMe id="about" />
+            <div id="about" ref={aboutRef}>
+              <AboutMe />
             </div>
             <Title id="skills" ref={skillsRef}>Skills</Title>
             <Skills />
@@ -135,6 +135,11 @@ const ContainerInner = styled.div`
                 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
  
   
+
+  @media (max-width: 450px){
+    width:90vw;
+
+  }
 `
 
 const Center = styled.div`
@@ -168,6 +173,10 @@ const Center = styled.div`
   @media (max-width: 768px){
     width: 100%;
   } 
+
+  @media (max-width: 450px){
+    width: 90%;
+  } 
 `
 
 const Bottom = styled.div`
@@ -176,6 +185,7 @@ const Bottom = styled.div`
   width: 100%;
   overflow: hidden;
   position: relative;
+
 
 
   &::after{
@@ -199,6 +209,9 @@ const Bottom = styled.div`
     /* background-image: url("https://www.pngkey.com/png/full/27-270243_ceiling.png"); */
     -webkit-border-before-color:black;
    
+    @media (max-width: 450px ){
+  
+  }
 
   }
 
@@ -225,9 +238,16 @@ const SwiperConainer = styled.div`
   height: 300px;
   margin: auto; 
   border-radius: 5px ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: 650px ){
-    width: 300px;
+    width: fit-content;
+  }
+
+  @media (max-width: 450px ){
+    /* width: fit-content; */
   }
 `
 

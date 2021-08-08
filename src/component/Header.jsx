@@ -80,6 +80,11 @@ const Container = styled.div`
   width: 70vw;
   margin: auto;
   color: white;
+
+  @media (max-width: 450px){
+    width:90vw;
+
+  }
 `;
 const HeaderWraper = styled.div`
   display: flex;
@@ -112,6 +117,11 @@ const HeaderIcon = styled.div`
 
   @media (max-width: 650px) {
     padding: 10px;
+  }
+
+  @media (max-width: 550px){
+    display: none;
+
   }
   
   &:hover {

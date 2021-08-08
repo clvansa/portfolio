@@ -33,9 +33,8 @@ const Skills = () => {
               <SkillsSubtitle>More than 2 years</SkillsSubtitle>
             </SkillsBox>
           </SkillsItemLeft>
-
         </SkillsItem>
-         <SkillProgress type={"frontend"} />
+        <SkillProgress type={"frontend"} />
       </SkillsItems>
 
       <SkillsItems>
@@ -47,7 +46,6 @@ const Skills = () => {
               <SkillsSubtitle>More than 2 years</SkillsSubtitle>
             </SkillsBox>
           </SkillsItemLeft>
-        
         </SkillsItem>
         <SkillProgress type={"backend"} />
       </SkillsItems>
@@ -92,7 +90,7 @@ const SkillsItems = styled.div`
   padding-right: 120px;
   /* padding: 0 30px; */
 
-  @media (min-width: 450px){
+  @media (max-width: 768px) {
     padding: 0;
   }
 `;
@@ -107,19 +105,33 @@ const SkillsItemLeft = styled.div`
   align-items: center;
   text-align: left;
   width: 300px;
+
+  @media (max-width: 768px) {
+    width: fit-content;
+  }
 `;
 
-const SkillsTitle = styled.div`
-  font-weight: bold;
+const SkillsTitle = styled.h3`
+  font-weight: 900;
   font-size: 1.2rem;
+  @media (max-width: 465px) {
+    font-size: 0.7rem;
+  }
 `;
 const SkillsSubtitle = styled.span`
   font-size: 14px;
+  @media (max-width: 465px) {
+    font-size: 10px;
+  }
 `;
 
 const CodeIcon = styled(Code)`
   font-size: 2.5rem !important;
   margin-right: 5px;
+
+  @media (max-width: 465px) {
+    font-size: 1.5rem !important;
+  }
 `;
 
 const IconButtonCss = styled(IconButton)`

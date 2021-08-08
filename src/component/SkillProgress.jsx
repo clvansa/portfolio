@@ -54,7 +54,11 @@ const SkillProgress = ({ type }) => {
               <ProgressListTitle>{skill.title} </ProgressListTitle>
               <ProgressListPercent>{skill.value}%</ProgressListPercent>
             </ProgressListsTop>
-            <LinearProgress variant="determinate" color="secondary" value={skill.value} />
+            <LinearProgress
+              variant="determinate"
+              color="secondary"
+              value={skill.value}
+            />
           </ProgressItem>
         ))
       )}
@@ -75,5 +79,7 @@ const ProgressListsTop = styled.div`
   justify-content: space-between;
   margin-bottom: 10px;
 `;
-const ProgressListTitle = styled.h4``;
+const ProgressListTitle = styled.h4`
+  font-weight: 500;
+`;
 const ProgressListPercent = styled.span``;

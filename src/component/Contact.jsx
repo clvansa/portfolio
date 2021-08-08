@@ -31,7 +31,9 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   @media (max-width: 650px) {
-    width: 300px;
+    width: 100%;
+    height: 50vh;
+
   }
 `;
 const Title = styled.h3`

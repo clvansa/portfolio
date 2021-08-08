@@ -17,10 +17,15 @@ body {
   width: 500px;
 }
 
-@media (max-width: 650px ){
-  
+@media (max-width: 750px) {
   .swiper-container {
-    width: 300px;
+    width: 300px !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .swiper-container {
+    width: 200px !important;
   }
 }
 
@@ -36,4 +41,12 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.MuiLinearProgress-barColorSecondary {
+  background-color: #b1afb0 !important;
+}
+
+.MuiLinearProgress-colorSecondary {
+  background-color: rgb(31, 30, 30) !important;
 }
