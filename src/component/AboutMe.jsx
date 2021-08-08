@@ -1,37 +1,17 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-const AboutMe = () => {
-  const [open, setOpen] = useState(false);
+const AboutMe = ({ setOpen }) => {
   return (
     <Container>
       <Title>I AM </Title>
       <Title> Web Developer</Title>
       <SubTitle>Full-Stack Web Entwickler </SubTitle>
       <TextAboutMe>
-        Full-Stack Web Entwickler mit mehr als 7Jahren Erfahrung in der
+        Full-Stack Web Entwickler mit mehr als 7Jahren Berufserfahrung in der
         Buchhaltung.
       </TextAboutMe>
       <Button onClick={() => setOpen(true)}>Read More</Button>
-
-      {open && (
-        <Popup>
-          <TextAboutMe>
-            Derzeit befinde ich mich in einer einjährigen Vollzeitausbildung im
-            Bereich Full-Stack Webentwicklung (MERN Stack) und bin auf der Suche
-            nach einer neuen Herausforderung im Bereich der Webentwicklung. Ein
-            hohes Maß an Professionalität und Flexibilität sind mir wichtig. Ich
-            habe die Fähigkeit, mir Programmiersysteme bzw. -sprachen
-            autodidaktisch zu erschließen.
-          </TextAboutMe>
-          <Button
-            onClick={() => setOpen(false)}
-            style={{ textAlign: "center" }}
-          >
-            Close
-          </Button>
-        </Popup>
-      )}
     </Container>
   );
 };
@@ -94,6 +74,7 @@ const TextAboutMe = styled.p`
   width: 400px;
   padding-left: 5px;
   text-align: left;
+  color: white;
 
   @media (max-width: 650px) {
     padding-left: 20px;
@@ -123,18 +104,4 @@ const Button = styled.button`
     outline: 1px solid red;
     background-color: transparent;
   }
-`;
-
-const Popup = styled.div`
-  width: 500px;
-  height: 500;
-  position: absolute;
-  background-color: #2b2a30;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.4);
 `;

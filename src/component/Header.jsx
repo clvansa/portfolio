@@ -91,6 +91,7 @@ const HeaderWraper = styled.div`
   justify-content: space-between;
 `;
 const Left = styled.div``;
+
 const HeaderItems = styled.ul`
   display: flex;
   list-style: none;
@@ -133,6 +134,10 @@ const HeaderName = styled.span`
   font-weight: 600;
   height: 100%;
   cursor: pointer;
+  
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
   @media (max-width: 650px) {
     font-size: 10px;
   }
@@ -152,6 +157,7 @@ const ToTop = styled.div`
   border-radius: 50%;
   color: white;
   cursor: pointer;
+  z-index: 100;
 
   &:hover {
     background-color: #2b2a30;

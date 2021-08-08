@@ -1,22 +1,53 @@
+import { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
+import { useForm, ValidationError } from "@formspree/react";
 
 const Contact = () => {
+  const [state, handleSubmit] = useForm("mvodwnkj");
+  const [succeeded, setSucceeded] = useState(false);
+  const formRef = useRef();
+
+  useEffect(() => {
+    let mounted = true;
+
+    if (mounted) {
+      if (state.succeeded) {
+        formRef.current.reset();
+        setSucceeded(true);
+      }
+    }
+
+    return () => (mounted = false);
+  }, [state.succeeded]);
+
   return (
     <Container>
       <Title>Get in Touch</Title>
-      <Form>
+      <Form onSubmit={handleSubmit} ref={formRef}>
         <Items>
           <Box>
-            <Input placeholder="Name" />
-
-            <Input placeholder="Email" />
+            <Input placeholder="Name" id="name" type="text" name="name" />
+            <Input placeholder="Email" id="email" type="email" name="email" />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+            />
           </Box>
           <Box>
-            <Textarea placeholder="Message" />
+            <Textarea placeholder="Message" id="message" name="message" />
+            <ValidationError
+              prefix="Message"
+              field="message"
+              errors={state.errors}
+            />
           </Box>
         </Items>
-        <Button>Send</Button>
+        <Button type="submit" disabled={state.submitting}>
+          Send
+        </Button>
       </Form>
+      <p>{succeeded && "Message has been successfully sent!"}</p>
     </Container>
   );
 };
@@ -33,7 +64,6 @@ const Container = styled.div`
   @media (max-width: 650px) {
     width: 100%;
     height: 50vh;
-
   }
 `;
 const Title = styled.h3`

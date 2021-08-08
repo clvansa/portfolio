@@ -1,5 +1,5 @@
 import './App.css';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Header from './component/Header';
 import styled from 'styled-components';
 import AboutMe from './component/AboutMe';
@@ -18,15 +18,34 @@ function App() {
   const skillsRef = useRef()
   const projectRef = useRef()
   const contactRef = useRef()
+  const [open, setOpen] = useState(true);
+
   return (
     <div className="App">
+      {open && (
+        <Popup>
+          <TextAboutMe>
+            Derzeit bin ich auf der Suche nach einer Vollzeitanstellung im
+            Bereich der Webentwicklung und für neue Herausforderungen bereit. .
+            Ein hohes Maß an Professionalität und Flexibilität sind mir wichtig.
+            Ich habe die Fähigkeit, mir Programmiersysteme bzw. -sprachen
+            autodidaktisch zu erschließen.
+          </TextAboutMe>
+          <Button
+            onClick={() => setOpen(false)}
+            style={{ textAlign: "center" }}
+          >
+            Close
+          </Button>
+        </Popup>
+      )}
       <TopSide id="home" ref={homeRef} >
         <Header homeRef={homeRef} aboutRef={aboutRef} skillsRef={skillsRef} contactRef={contactRef} projectRef={projectRef} />
         <PageTitle >Majd</PageTitle>
         <ContainerInner>
           <ContainerInnerTop>
             <div id="about" ref={aboutRef}>
-              <AboutMe />
+              <AboutMe setOpen={setOpen} />
             </div>
             <Title id="skills" ref={skillsRef}>Skills</Title>
             <Skills />
@@ -251,3 +270,61 @@ const SwiperConainer = styled.div`
   }
 `
 
+const Popup = styled.div`
+  width: 500px;
+  height: 500;
+  position: absolute;
+  background-color: #2b2a30;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.4);
+
+  @media (max-width: 650px) {
+    padding:  20px;
+    width: 300px;
+  }
+
+`;
+
+
+const TextAboutMe = styled.p`
+  margin-top: 20px;
+  /* max-width: 350px; */
+  width: 400px;
+  padding-left: 5px;
+  text-align: left;
+  color: white;
+
+  @media (max-width: 650px) {
+    padding-left: 20px;
+    width: fit-content;
+  }
+
+  @media (max-width: 450px) {
+    padding: 0 20px;
+    width: fit-content;
+  }
+`;
+
+const Button = styled.button`
+  margin-top: 20px;
+  padding: 10px;
+  background-color: red;
+  outline: none;
+  border: none;
+  width: 120px;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s all ease-in-out;
+  /* width: 400px; */
+  text-align: center;
+
+  &:hover {
+    outline: 1px solid red;
+    background-color: transparent;
+  }
+`;

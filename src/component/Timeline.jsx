@@ -50,7 +50,7 @@ export default function OutlinedTimeline() {
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
-          <TimeLineTitle> Udacity (Online-kurs)</TimeLineTitle>
+          <TimeLineTitle> Udacity (Online-Kurs)</TimeLineTitle>
           <TimeLineDate>MAI 2018 – AUG 2018</TimeLineDate>
           <TimeLineDesc>
             Weiterbildung zum Programmierer - Full Stack Developer Track
