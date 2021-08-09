@@ -77,6 +77,11 @@ const Container = styled.div`
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-around;
+
+  @media (max-width: 768px) {
+    padding: 40px 20px;
+  }
+
 `;
 
 const SkillsItems = styled.div`
@@ -84,14 +89,21 @@ const SkillsItems = styled.div`
   padding-right: 120px;
   /* padding: 0 30px; */
 
+  @media (max-width: 1400px) {
+    padding-right: 40px;
+    padding-bottom: 20px;
+
+  }
+
   @media (max-width: 768px) {
-    padding: 0;
+    padding: 10px;
+    padding-bottom: 20px;
+
   }
 `;
 const SkillsItem = styled.div`
   display: flex;
-  /* justify-content: space-between; */
-  /* align-items: center; */
+
 `;
 const SkillsBox = styled.div``;
 const SkillsItemLeft = styled.div`
@@ -108,8 +120,8 @@ const SkillsItemLeft = styled.div`
 const SkillsTitle = styled.h3`
   font-weight: 900;
   font-size: 1.2rem;
-  @media (max-width: 465px) {
-    font-size: 0.7rem;
+  @media (max-width: 365px) {
+    font-size: 0.9rem;
   }
 `;
 const SkillsSubtitle = styled.span`
@@ -123,7 +135,7 @@ const CodeIcon = styled(Code)`
   font-size: 2.5rem !important;
   margin-right: 10px;
 
-  @media (max-width: 465px) {
+  @media (max-width: 365px) {
     font-size: 1.5rem !important;
   }
 `;
@@ -131,7 +143,7 @@ const CodeIcon = styled(Code)`
 const BiCodeCurlyIcon = styled(BiCodeCurly)`
   font-size: 2.5rem !important;
   margin-right: 10px;
-  @media (max-width: 465px) {
+  @media (max-width: 365px) {
     font-size: 1.5rem !important;
   }
 `;
