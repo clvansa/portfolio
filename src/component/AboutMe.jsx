@@ -1,15 +1,74 @@
-import { useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import Translate, { onLocaleChange } from "react-translate-component";
+import { useEffect, useState } from "react";
 
 const AboutMe = ({ setOpen }) => {
+  const [localChange, setLocalChange] = useState("en");
+  const [array, setArray] = useState({
+    i: [],
+    am: [],
+    web: [],
+    developer: [],
+  });
+
+  useEffect(() => {
+    onLocaleChange((lang) => {
+      setLocalChange(lang);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (localChange == "en") {
+      setArray({
+        i: ["I", "_"],
+        am: ["A", "M"],
+        web: ["W", "e", "b"],
+        developer: ["D", "e", "v", "e", "l", "o", "p", "e", "r"],
+      });
+    } else {
+      setArray({
+        i: ["I", "c", "h", "_"],
+        am: ["b", "i", "n"],
+        web: ["W", "e", "b"],
+        developer: ["E", "n", "t", "w", "i", "c", "k", "l", "e", "r"],
+      });
+    }
+  }, [localChange]);
+
+  const randomRotate = () => {
+    return Math.random() * 30;
+  };
+
+
   return (
     <Container>
-      <Title>I AM </Title>
-      <Title> Web Developer</Title>
-      <SubTitle>Full-Stack Web Entwickler </SubTitle>
+      <Title>
+        {array.i.map((letter, i) => (
+          <Letter
+            random={randomRotate()}
+            key={`i${i}`}
+            style={{ paddingRight: letter == "_" ? "10px" : 0 }}
+          >
+            {letter !== "_" && letter}{" "}
+          </Letter>
+        ))}
+        {array.am.map((letter, i) => (
+          <Letter random={randomRotate()} key={`am${i}`}>{letter}</Letter>
+        ))}
+      </Title>
+      <Title>
+        {array.web.map((letter, i) => (
+          <Letter random={randomRotate()} key={`web${i}`}>{letter}</Letter>
+        ))}{" "}
+        {array.developer.map((letter, i) => (
+          <Letter random={randomRotate()} key={`developer${i}`}>{letter}</Letter>
+        ))}
+      </Title>
+      <SubTitle>
+        <Translate content="about.subtitle" />
+      </SubTitle>
       <TextAboutMe>
-        Full-Stack Web Entwickler mit mehr als 7Jahren Berufserfahrung in der
-        Buchhaltung.
+        <Translate content="about.aboutMe" />
       </TextAboutMe>
       <Button onClick={() => setOpen(true)}>Read More</Button>
     </Container>
@@ -20,6 +79,7 @@ export default AboutMe;
 
 const Container = styled.div`
   /* text-align: left; */
+
   min-height: 60vh;
   display: flex;
   padding: 40px;
@@ -68,6 +128,24 @@ const SubTitle = styled.h5`
     width: 200px;
   }
 `;
+
+const Animation = (random) => keyframes`
+  
+  25% {
+    transform: rotate(-${random}deg) scale(1.5) ;
+  }
+
+  50% {
+    transform: rotate(${random}deg) scale(1.5);
+  }
+  75% {
+    transform: rotate(-${random}deg) scale(1.5);
+  }
+  100% {
+    transform: rotate(${random}deg) scale(1.5);
+  }
+  
+`;
 const TextAboutMe = styled.p`
   margin-top: 20px;
   /* max-width: 350px; */
@@ -99,9 +177,22 @@ const Button = styled.button`
   transition: 0.5s all ease-in-out;
   /* width: 400px; */
   text-align: center;
+  font-family: "Poppins", sans-serif;
 
   &:hover {
     outline: 1px solid red;
     background-color: transparent;
+  }
+`;
+
+const Letter = styled.span`
+  color: inherit;
+  display: inline-block;
+  cursor: default;
+
+  &:hover {
+    /* animation: letter 1s alternate linear; */
+    animation: ${(props) => Animation(props.random)} 1s alternate linear;
+    color: red;
   }
 `;

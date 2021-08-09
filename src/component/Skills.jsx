@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { ExpandMore, ExpandLess, Code } from "@material-ui/icons";
+import { Code } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
-import LinearProgress from "@material-ui/core/LinearProgress";
 import { useState } from "react";
 import SkillProgress from "./SkillProgress";
+import Translate from "react-translate-component";
 
 const Skills = () => {
   const [openFrontend, setOpenFrontend] = useState(false);
@@ -29,8 +29,12 @@ const Skills = () => {
           <SkillsItemLeft>
             <CodeIcon />
             <SkillsBox>
-              <SkillsTitle>Frontend developer</SkillsTitle>
-              <SkillsSubtitle>More than 2 years</SkillsSubtitle>
+              <SkillsTitle>
+                <Translate content="skills.t1" />
+              </SkillsTitle>
+              <SkillsSubtitle>
+                <Translate content="skills.s1" />
+              </SkillsSubtitle>
             </SkillsBox>
           </SkillsItemLeft>
         </SkillsItem>
@@ -42,8 +46,8 @@ const Skills = () => {
           <SkillsItemLeft>
             <CodeIcon />
             <SkillsBox>
-              <SkillsTitle>Backend developer</SkillsTitle>
-              <SkillsSubtitle>More than 2 years</SkillsSubtitle>
+              <SkillsTitle><Translate content="skills.t2" /></SkillsTitle>
+              <SkillsSubtitle><Translate content="skills.s2" /></SkillsSubtitle>
             </SkillsBox>
           </SkillsItemLeft>
         </SkillsItem>

@@ -1,5 +1,5 @@
 import './App.css';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Header from './component/Header';
 import styled from 'styled-components';
 import AboutMe from './component/AboutMe';
@@ -7,10 +7,15 @@ import Skills from './component/Skills';
 import Timeline from './component/Timeline';
 import Swiper from './component/Swiper';
 import Contact from './component/Contact';
+import counterpart from "counterpart";
+import Translate from "react-translate-component";
+import en from './utils/lang/en'
+import de from './utils/lang/de'
 
 
 
-
+counterpart.registerTranslations("en", en);
+counterpart.registerTranslations("de", de);
 
 function App() {
   const homeRef = useRef()
@@ -20,16 +25,24 @@ function App() {
   const contactRef = useRef()
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    const getLang = localStorage.getItem('lang');
+    if (getLang) {
+      counterpart.setLocale(getLang)
+    } else {
+      localStorage.setItem('lang', 'en')
+      counterpart.setLocale('en')
+
+    }
+  }, [])
+
   return (
     <div className="App">
       {open && (
         <Popup>
           <TextAboutMe>
-            Derzeit bin ich auf der Suche nach einer Vollzeitanstellung im
-            Bereich der Webentwicklung und für neue Herausforderungen bereit. .
-            Ein hohes Maß an Professionalität und Flexibilität sind mir wichtig.
-            Ich habe die Fähigkeit, mir Programmiersysteme bzw. -sprachen
-            autodidaktisch zu erschließen.
+            <Translate content="about.popup" />
+
           </TextAboutMe>
           <Button
             onClick={() => setOpen(false)}
@@ -54,13 +67,14 @@ function App() {
 
             <Center>
               <Title>
-                Qualifizierung
+                <Translate content="qualification.title" />
+
               </Title>
               <Timeline />
             </Center>
             <Bottom>
               <Title id="project" ref={projectRef} style={{ color: "#2b2a30" }}>
-                Project
+                <Translate content="project.title" />
 
               </Title>
               <SwiperConainer >

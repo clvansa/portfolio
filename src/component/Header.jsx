@@ -4,6 +4,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import EmailIcon from "@material-ui/icons/Email";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
+import counterpart from "counterpart";
 
 const Header = ({ homeRef, aboutRef, skillsRef, contactRef, projectRef }) => {
   const [active, setActive] = useState("home");
@@ -12,6 +13,12 @@ const Header = ({ homeRef, aboutRef, skillsRef, contactRef, projectRef }) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
     setActive(ref.current.id);
   };
+
+  const handleChange = (e) => {
+    counterpart.setLocale(e.target.value);
+    localStorage.setItem("lang", e.target.value);
+  };
+
   return (
     <Container>
       <HeaderWraper>
@@ -53,14 +60,34 @@ const Header = ({ homeRef, aboutRef, skillsRef, contactRef, projectRef }) => {
         <Right>
           <HeaderItems>
             <HeaderIcon>
-              <GitHubIcon />
+              <Select
+                defaultValue={
+                  localStorage.getItem("lang") || counterpart.getLocale()
+                }
+                onChange={(e) => handleChange(e)}
+              >
+                <Option value="en">EN</Option>
+                <Option value="de">DE</Option>
+              </Select>
             </HeaderIcon>
-            <HeaderIcon>
-              <LinkedInIcon />
-            </HeaderIcon>
-            <HeaderIcon>
-              <EmailIcon />
-            </HeaderIcon>
+            <a href="https://github.com/clvansa" target="_blank">
+              <HeaderIcon>
+                <GitHubIcon />
+              </HeaderIcon>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/majd-makkieh-6737a761/"
+              target="_blank"
+            >
+              <HeaderIcon>
+                <LinkedInIcon />
+              </HeaderIcon>
+            </a>
+            <a href="mailto:clvansa@gmail.com">
+              <HeaderIcon>
+                <EmailIcon />
+              </HeaderIcon>
+            </a>
           </HeaderItems>
         </Right>
       </HeaderWraper>
@@ -81,9 +108,8 @@ const Container = styled.div`
   margin: auto;
   color: white;
 
-  @media (max-width: 450px){
-    width:90vw;
-
+  @media (max-width: 450px) {
+    width: 90vw;
   }
 `;
 const HeaderWraper = styled.div`
@@ -120,13 +146,12 @@ const HeaderIcon = styled.div`
     padding: 10px;
   }
 
-  @media (max-width: 550px){
+  @media (max-width: 550px) {
     display: none;
-
   }
-  
+
   &:hover {
-    color: red;
+    color: #8d8583;
   }
 `;
 const HeaderName = styled.span`
@@ -134,7 +159,7 @@ const HeaderName = styled.span`
   font-weight: 600;
   height: 100%;
   cursor: pointer;
-  
+
   @media (max-width: 768px) {
     font-size: 14px;
   }
@@ -162,4 +187,16 @@ const ToTop = styled.div`
   &:hover {
     background-color: #2b2a30;
   }
+`;
+
+const Select = styled.select`
+  outline: none;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+`;
+const Option = styled.option`
+  color: black;
 `;

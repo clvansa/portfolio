@@ -50,3 +50,21 @@ a {
 .MuiLinearProgress-colorSecondary {
   background-color: rgb(31, 30, 30) !important;
 }
+
+@keyframes letter {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(45deg) scale(1.5);
+  }
+  75% {
+    transform: rotate(0deg) scale(1.5);
+  }
+  90% {
+    transform: rotate(-45deg) scale(1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}

@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import { useForm, ValidationError } from "@formspree/react";
+import Translate from "react-translate-component";
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("mvodwnkj");
@@ -22,7 +23,9 @@ const Contact = () => {
 
   return (
     <Container>
-      <Title>Get in Touch</Title>
+      <Title>
+        <Translate content="contact.title" />
+      </Title>
       <Form onSubmit={handleSubmit} ref={formRef}>
         <Items>
           <Box>
@@ -122,4 +125,11 @@ const Button = styled.button`
   outline: none;
   background-color: #b1afb0;
   color: #2b2a30;
+  cursor: pointer;
+  transition: 0.5s all;
+
+  &:hover {
+    color: white;
+    background-color: #666566;
+  }
 `;

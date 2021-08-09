@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Timeline from "@material-ui/lab/Timeline";
 import TimelineItem from "@material-ui/lab/TimelineItem";
 import TimelineSeparator from "@material-ui/lab/TimelineSeparator";
@@ -6,9 +6,16 @@ import TimelineConnector from "@material-ui/lab/TimelineConnector";
 import TimelineContent from "@material-ui/lab/TimelineContent";
 import TimelineDot from "@material-ui/lab/TimelineDot";
 import Typography from "@material-ui/core/Typography";
+import Aos from "aos";
 import styled from "styled-components";
+import "aos/dist/aos.css";
+import Translate from "react-translate-component";
 
 export default function OutlinedTimeline() {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
+
   return (
     <Timeline align="alternate">
       <TimelineItem>
@@ -16,15 +23,15 @@ export default function OutlinedTimeline() {
           <TimelineDot variant="outlined" />
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent>
+        <TimelineContent data-aos="fade-left">
           <TimeLineTitle>
-            DCI Digital Career Institute gGmbH in Berlin
+            <Translate content="qualification.t1" />
           </TimeLineTitle>
-          <TimeLineDate>NOV 2019 – DEZ 2020</TimeLineDate>
+          <TimeLineDate>
+            <Translate content="qualification.d1" />
+          </TimeLineDate>
           <TimeLineDesc>
-            Weiterbildung zum Full-Stack Web Entwickler - einjährige
-            Vollzeitausbildung - einschließlich Technologien des MERN-Stack -
-            mehrere kleine und ein abschließendes großes praktisches Projekt
+            <Translate content="qualification.p1" />
           </TimeLineDesc>
         </TimelineContent>
       </TimelineItem>
@@ -33,14 +40,15 @@ export default function OutlinedTimeline() {
           <TimelineDot variant="outlined" />
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent>
+        <TimelineContent data-aos="fade-right">
           <TimeLineTitle>
-            DCI Digital Career Institute gGmbH in Berlin
+            <Translate content="qualification.t2" />
           </TimeLineTitle>
-          <TimeLineDate>SEPT 2019 – OKT 2019</TimeLineDate>
+          <TimeLineDate>
+            <Translate content="qualification.d2" />
+          </TimeLineDate>
           <TimeLineDesc>
-            Qualifizierung „Erprobungscenter Digitale Berufe“ für die Ausbildung
-            zum Web Developer
+            <Translate content="qualification.p2" />
           </TimeLineDesc>
         </TimelineContent>
       </TimelineItem>
@@ -49,11 +57,15 @@ export default function OutlinedTimeline() {
           <TimelineDot variant="outlined" />
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent>
-          <TimeLineTitle> Udacity (Online-Kurs)</TimeLineTitle>
-          <TimeLineDate>MAI 2018 – AUG 2018</TimeLineDate>
+        <TimelineContent data-aos="fade-left">
+          <TimeLineTitle>
+            <Translate content="qualification.t3" />
+          </TimeLineTitle>
+          <TimeLineDate>
+            <Translate content="qualification.d3" />
+          </TimeLineDate>
           <TimeLineDesc>
-            Weiterbildung zum Programmierer - Full Stack Developer Track
+            <Translate content="qualification.p3" />{" "}
           </TimeLineDesc>
         </TimelineContent>
       </TimelineItem>
@@ -61,15 +73,15 @@ export default function OutlinedTimeline() {
         <TimelineSeparator>
           <TimelineDot variant="outlined" />
         </TimelineSeparator>
-        <TimelineContent>
+        <TimelineContent data-aos="fade-right">
           <TimeLineTitle>
-            Diplom in Wirtschaft und Handel in Damaskus, Syrien
+            <Translate content="qualification.t4" />
           </TimeLineTitle>
-          <TimeLineDate>SEPT 2005 – AUG 2008</TimeLineDate>
+          <TimeLineDate>
+            <Translate content="qualification.d4" />
+          </TimeLineDate>
           <TimeLineDesc>
-            {" "}
-            - Technische Fachhochschule für Buchhaltung und Finanzierung -
-            Schwerpunkt „Buchhaltung“ mit dem Prädikat „gut“
+            <Translate content="qualification.p4" />
           </TimeLineDesc>
         </TimelineContent>
       </TimelineItem>
