@@ -4,24 +4,10 @@ import { IconButton } from "@material-ui/core";
 import { useState } from "react";
 import SkillProgress from "./SkillProgress";
 import Translate from "react-translate-component";
+import { BiCodeCurly } from "react-icons/bi";
 
 const Skills = () => {
-  const [openFrontend, setOpenFrontend] = useState(false);
-  const [openBackend, setOpenBackend] = useState(false);
-  const [openDesigner, setOpenDesigner] = useState(false);
-  const [type, setType] = useState("frontend");
 
-  const handleToggle = (type) => {
-    console.log(type);
-    setType(type);
-    if (type === "frontend") {
-      setOpenFrontend(!openFrontend);
-      setOpenBackend(false);
-    } else if (type === "backend") {
-      setOpenBackend(!openBackend);
-      setOpenFrontend(false);
-    }
-  };
   return (
     <Container>
       <SkillsItems>
@@ -44,10 +30,14 @@ const Skills = () => {
       <SkillsItems>
         <SkillsItem>
           <SkillsItemLeft>
-            <CodeIcon />
+            <BiCodeCurlyIcon />
             <SkillsBox>
-              <SkillsTitle><Translate content="skills.t2" /></SkillsTitle>
-              <SkillsSubtitle><Translate content="skills.s2" /></SkillsSubtitle>
+              <SkillsTitle>
+                <Translate content="skills.t2" />
+              </SkillsTitle>
+              <SkillsSubtitle>
+                <Translate content="skills.s2" />
+              </SkillsSubtitle>
             </SkillsBox>
           </SkillsItemLeft>
         </SkillsItem>
@@ -131,13 +121,23 @@ const SkillsSubtitle = styled.span`
 
 const CodeIcon = styled(Code)`
   font-size: 2.5rem !important;
-  margin-right: 5px;
+  margin-right: 10px;
 
   @media (max-width: 465px) {
     font-size: 1.5rem !important;
   }
 `;
 
+const BiCodeCurlyIcon = styled(BiCodeCurly)`
+  font-size: 2.5rem !important;
+  margin-right: 10px;
+  @media (max-width: 465px) {
+    font-size: 1.5rem !important;
+  }
+`;
+
+
 const IconButtonCss = styled(IconButton)`
   color: white !important;
 `;
+

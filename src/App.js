@@ -8,6 +8,7 @@ import Timeline from './component/Timeline';
 import Swiper from './component/Swiper';
 import Contact from './component/Contact';
 import counterpart from "counterpart";
+import Button from "./component/Button";
 import Translate from "react-translate-component";
 import en from './utils/lang/en'
 import de from './utils/lang/de'
@@ -321,24 +322,5 @@ const TextAboutMe = styled.p`
   @media (max-width: 450px) {
     padding: 0 20px;
     width: fit-content;
-  }
-`;
-
-const Button = styled.button`
-  margin-top: 20px;
-  padding: 10px;
-  background-color: red;
-  outline: none;
-  border: none;
-  width: 120px;
-  color: white;
-  cursor: pointer;
-  transition: 0.5s all ease-in-out;
-  /* width: 400px; */
-  text-align: center;
-
-  &:hover {
-    outline: 1px solid red;
-    background-color: transparent;
   }
 `;

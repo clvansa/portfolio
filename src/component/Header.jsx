@@ -34,7 +34,7 @@ const Header = ({ homeRef, aboutRef, skillsRef, contactRef, projectRef }) => {
               active={active === "about"}
               onClick={() => handleDirect(aboutRef)}
             >
-              <HeaderName>About me</HeaderName>
+              <HeaderName>About</HeaderName>
             </HeaderItem>
             <HeaderItem
               active={active === "skills"}
@@ -53,12 +53,12 @@ const Header = ({ homeRef, aboutRef, skillsRef, contactRef, projectRef }) => {
               active={active === "contact"}
               onClick={() => handleDirect(contactRef)}
             >
-              <HeaderName>Contact me</HeaderName>
+              <HeaderName>Contact</HeaderName>
             </HeaderItem>
           </HeaderItems>
         </Left>
         <Right>
-          <HeaderItems>
+          <HeaderIcons>
             <HeaderIcon>
               <Select
                 defaultValue={
@@ -88,7 +88,7 @@ const Header = ({ homeRef, aboutRef, skillsRef, contactRef, projectRef }) => {
                 <EmailIcon />
               </HeaderIcon>
             </a>
-          </HeaderItems>
+          </HeaderIcons>
         </Right>
       </HeaderWraper>
       <ToTop onClick={() => handleDirect(homeRef)}>
@@ -109,7 +109,7 @@ const Container = styled.div`
   color: white;
 
   @media (max-width: 450px) {
-    width: 90vw;
+    width: 100vw;
   }
 `;
 const HeaderWraper = styled.div`
@@ -121,6 +121,9 @@ const Left = styled.div``;
 const HeaderItems = styled.ul`
   display: flex;
   list-style: none;
+  @media (max-width: 650px) {
+    width: 80vw;
+  }
 `;
 const HeaderItem = styled.li`
   padding: 30px 10px;
@@ -130,6 +133,7 @@ const HeaderItem = styled.li`
 
   @media (max-width: 650px) {
     padding: 10px;
+    margin-left: 0;
   }
 
   &:hover {
@@ -137,17 +141,28 @@ const HeaderItem = styled.li`
   }
 `;
 
+const HeaderIcons = styled.div`
+  display: flex;
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+`;
+
 const HeaderIcon = styled.div`
-  padding: 30px 10px;
+  padding: 30px 8px;
   cursor: pointer;
   transition: 0.5s color;
 
   @media (max-width: 650px) {
-    padding: 10px;
+    padding: 5px;
   }
 
   @media (max-width: 550px) {
-    display: none;
+    /* display: none; */
   }
 
   &:hover {

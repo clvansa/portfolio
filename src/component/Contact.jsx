@@ -6,6 +6,7 @@ import Translate from "react-translate-component";
 const Contact = () => {
   const [state, handleSubmit] = useForm("mvodwnkj");
   const [succeeded, setSucceeded] = useState(false);
+  const [buttonState, setButtonState] = useState("");
   const formRef = useRef();
 
   useEffect(() => {
@@ -21,6 +22,7 @@ const Contact = () => {
     return () => (mounted = false);
   }, [state.succeeded]);
 
+  console.log(buttonState);
   return (
     <Container>
       <Title>
@@ -29,8 +31,20 @@ const Contact = () => {
       <Form onSubmit={handleSubmit} ref={formRef}>
         <Items>
           <Box>
-            <Input placeholder="Name" id="name" type="text" name="name" />
-            <Input placeholder="Email" id="email" type="email" name="email" />
+            <Input
+              placeholder="Name"
+              id="name"
+              type="text"
+              name="name"
+              required
+            />
+            <Input
+              placeholder="Email"
+              id="email"
+              type="email"
+              name="email"
+              required
+            />
             <ValidationError
               prefix="Email"
               field="email"
@@ -38,7 +52,12 @@ const Contact = () => {
             />
           </Box>
           <Box>
-            <Textarea placeholder="Message" id="message" name="message" />
+            <Textarea
+              placeholder="Message"
+              id="message"
+              name="message"
+              required
+            />
             <ValidationError
               prefix="Message"
               field="message"
@@ -46,6 +65,7 @@ const Contact = () => {
             />
           </Box>
         </Items>
+
         <Button type="submit" disabled={state.submitting}>
           Send
         </Button>
@@ -94,7 +114,6 @@ const Input = styled.input`
   margin-bottom: 10px;
   padding-left: 10px;
   background-color: #b1afb0;
-
   &:focus {
     outline: none;
   }

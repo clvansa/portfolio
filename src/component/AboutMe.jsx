@@ -1,6 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import Translate, { onLocaleChange } from "react-translate-component";
 import { useEffect, useState } from "react";
+import Button from "./Button";
 
 const AboutMe = ({ setOpen }) => {
   const [localChange, setLocalChange] = useState("en");
@@ -39,7 +40,6 @@ const AboutMe = ({ setOpen }) => {
     return Math.random() * 30;
   };
 
-
   return (
     <Container>
       <Title>
@@ -53,15 +53,21 @@ const AboutMe = ({ setOpen }) => {
           </Letter>
         ))}
         {array.am.map((letter, i) => (
-          <Letter random={randomRotate()} key={`am${i}`}>{letter}</Letter>
+          <Letter random={randomRotate()} key={`am${i}`}>
+            {letter}
+          </Letter>
         ))}
       </Title>
       <Title>
         {array.web.map((letter, i) => (
-          <Letter random={randomRotate()} key={`web${i}`}>{letter}</Letter>
+          <Letter random={randomRotate()} key={`web${i}`}>
+            {letter}
+          </Letter>
         ))}{" "}
         {array.developer.map((letter, i) => (
-          <Letter random={randomRotate()} key={`developer${i}`}>{letter}</Letter>
+          <Letter random={randomRotate()} key={`developer${i}`}>
+            {letter}
+          </Letter>
         ))}
       </Title>
       <SubTitle>
@@ -89,9 +95,14 @@ const Container = styled.div`
   position: relative;
   width: 500px;
 
+
+  @media (max-width: 1040px) {
+    width: 425px;  }
+
   @media (max-width: 650px) {
-    padding-left: 20px;
-    width: 400px;
+    padding: 20px 10px;
+    /* padding-left: 20px; */
+    width: 350px;
   }
 
   @media (max-width: 450px) {
@@ -101,17 +112,17 @@ const Container = styled.div`
 `;
 const Title = styled.h1`
   font-size: 3.2rem;
-  width: 600px;
+  width: 500px;
   text-align: center;
   font-weight: 900;
 
   @media (max-width: 650px) {
-    font-size: 1.5rem;
-    width: 200px;
+    font-size: 2rem;
+    width: 100%;
   }
 
   @media (max-width: 450px) {
-    font-size: 1.3rem;
+    font-size: 2rem;
   }
 `;
 const SubTitle = styled.h5`
@@ -162,26 +173,6 @@ const TextAboutMe = styled.p`
   @media (max-width: 450px) {
     padding: 0 20px;
     width: fit-content;
-  }
-`;
-
-const Button = styled.button`
-  margin-top: 20px;
-  padding: 10px;
-  background-color: red;
-  outline: none;
-  border: none;
-  width: 120px;
-  color: white;
-  cursor: pointer;
-  transition: 0.5s all ease-in-out;
-  /* width: 400px; */
-  text-align: center;
-  font-family: "Poppins", sans-serif;
-
-  &:hover {
-    outline: 1px solid red;
-    background-color: transparent;
   }
 `;
 
