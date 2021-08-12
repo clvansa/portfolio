@@ -144,7 +144,7 @@ const SubTitle = styled.h5`
 const Animation = (random) => keyframes`
   
   0% {
-    transform: rotate(-${random}deg) scale(1.5) ;
+    transform: rotate(-${random}deg) scale(1.0) ;
   }
   25% {
     transform: rotate(-${random}deg) scale(1.5) ;
