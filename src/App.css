@@ -14,24 +14,61 @@ body {
   background-image: url("https://www.pngkey.com/png/full/27-270243_ceiling.png");
 }
 .swiper-container {
-  width: 500px;
+  width: 500px !important;
+  height: 450px;
+  border-radius: 20px;
+  margin-top: 50px;
+}
+
+.swiper-button-prev {
+  left: 0 !important;
+  z-index: 1000 !important;
+}
+.swiper-button-next {
+  right: 0 !important;
+  z-index: 1000 !important;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  position: absolute;
+  bottom: -200px !important;
+  font-size: 20px !important;
+  width: 10px !important;
+  z-index: 1000 !important;
+  color: #2b2a30;
 }
 
 @media (max-width: 750px) {
   .swiper-container {
-    width: 300px !important;
+    width: 350px !important;
+    height: 470px;
+
+  }
+}
+
+@media (max-width: 550px) {
+  .swiper-container {
+    width: 280px !important;
+    height: 500px;
   }
 }
 
 @media (max-width: 450px) {
   .swiper-container {
-    width: 200px !important;
+    width: 280px !important;
+    height: 500px;
   }
 }
 
 .swiper-pagination {
-  bottom: 0;
-  padding-bottom: 10px;
+  bottom: 0 !important;
+  /* padding-bottom: 10px; */
+  z-index: 2 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #2b2a30 !important;
 }
 
 .swiper-wrapper {

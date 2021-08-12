@@ -12,6 +12,9 @@ import Button from "./component/Button";
 import Translate from "react-translate-component";
 import en from './utils/lang/en'
 import de from './utils/lang/de'
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Loading from './component/Loading'
+
 
 
 
@@ -25,6 +28,7 @@ function App() {
   const projectRef = useRef()
   const contactRef = useRef()
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const getLang = localStorage.getItem('lang');
@@ -36,6 +40,23 @@ function App() {
 
     }
   }, [])
+
+  useEffect(() => {
+    const timeOut = setInterval(() => {
+      setLoading(false)
+    }, 1000)
+
+    return () => { clearInterval(timeOut) }
+  }, [])
+
+  if (loading) {
+    return (
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+        <Loading />
+      </div>
+    )
+  }
+
 
   return (
     <div className="App">
@@ -162,17 +183,25 @@ const ContainerInner = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow:   2px 2px 2.5px 6px rgba(0, 0, 0, 0.1),
+  /* border-radius: 10px; */
+  /* box-shadow:   2px 2px 2.5px 6px rgba(0, 0, 0, 0.1),
                 2px -2px 8px 3px rgba(0, 0, 0, 0.3),
                 2px 2px 5px 0px rgba(0, 0, 0, 0.3),
-                0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+                0px 0px 5px 0px rgba(0, 0, 0, 0.3); */
+                
+ border-radius:3px;
+border-top: 1px solid rgba(255, 255, 255,0.1);
+border-bottom: 1px solid rgba(255, 255, 255,0.1);
+box-shadow:  -1px 20px 38px rgba(0,0,0,0.30),
+               -1px -10px 15px  rgba(0,0,0,0.22),
+               2px -1px 5px  rgba(255,255,255,0.4),
+               -3px -3px 50px  rgba(0,0,0,0.8),
+               3px 3px 50px  rgba(0,0,0,0.8);
  
   
-
+  
   @media (max-width: 450px){
     width:90vw;
-
   }
 `
 
@@ -215,7 +244,7 @@ const Center = styled.div`
 
 const Bottom = styled.div`
   background-color:#b1afb0;
-  min-height: 50vh;
+  min-height: 60vh;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -231,7 +260,6 @@ const Bottom = styled.div`
     height: 50px;
     transform: translate(-50%);
     background-color: #2b2a30;
-    /* overflow: hidden; */
      border-top-left-radius: 50px; 
     border-top-right-radius: 50px; 
     border:  3px solid rgba(0, 0, 0, 1);
@@ -240,7 +268,6 @@ const Bottom = styled.div`
     background-color: #2b2a30;
     background-size: cover;
     background-repeat: no-repeat;
-    /* background-image: url("https://www.pngkey.com/png/full/27-270243_ceiling.png"); */
     -webkit-border-before-color:black;
    
     @media (max-width: 450px ){

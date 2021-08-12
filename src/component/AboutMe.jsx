@@ -13,6 +13,7 @@ const AboutMe = ({ setOpen }) => {
   });
 
   useEffect(() => {
+    setLocalChange(localStorage.getItem("lang"));
     onLocaleChange((lang) => {
       setLocalChange(lang);
     });
@@ -95,9 +96,9 @@ const Container = styled.div`
   position: relative;
   width: 500px;
 
-
   @media (max-width: 1040px) {
-    width: 425px;  }
+    width: 425px;
+  }
 
   @media (max-width: 650px) {
     padding: 20px 10px;
@@ -183,7 +184,7 @@ const Letter = styled.span`
 
   &:hover {
     /* animation: letter 1s alternate linear; */
-    animation: ${(props) => Animation(props.random)} 1s alternate linear;
+    animation: ${(props) => Animation(props.random)} 1s infinite ease-in-out;
     color: red;
   }
 `;

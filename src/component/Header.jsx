@@ -188,16 +188,18 @@ const ToTop = styled.div`
   position: fixed;
   bottom: 5px;
   right: 5px;
-  border: 1px solid rgb(241, 8, 8, 0.5);
+  /* border: 1px solid rgb(241, 8, 8, 0.5); */
   width: 50px;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: 5px;
   color: white;
   cursor: pointer;
   z-index: 100;
+  transition: all 0.5s;
+  box-shadow:2px 1px 20px 0px rgba(0, 0, 0,5);
 
   &:hover {
     background-color: #2b2a30;
