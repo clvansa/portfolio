@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import styled from "styled-components";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
@@ -18,6 +18,11 @@ const Header = ({ homeRef, aboutRef, skillsRef, contactRef, projectRef }) => {
     counterpart.setLocale(e.target.value);
     localStorage.setItem("lang", e.target.value);
   };
+
+  useEffect(() => {
+    document.addEventListener("scroll", (e) => window.pageYOffset < 100 && setActive("home"));
+
+  }, [])
 
   return (
     <Container>

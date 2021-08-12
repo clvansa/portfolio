@@ -41,6 +41,8 @@ function App() {
     }
   }, [])
 
+
+
   useEffect(() => {
     const timeOut = setInterval(() => {
       setLoading(false)
@@ -133,7 +135,8 @@ const TopSide = styled.div`
   /* top: -50%;
   left: -50%; */
   z-index: -1;
-  background: url("https://i.ibb.co/MDmJfY1/office-865091.jpg") ;
+  /* background: url("https://i.ibb.co/MDmJfY1/office-865091.jpg") ; */
+  background: url("/office.jpg") ;
   background-repeat: no-repeat;
   background-position: center center ;
   background-size: cover;

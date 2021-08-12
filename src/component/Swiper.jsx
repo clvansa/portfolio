@@ -16,7 +16,7 @@ export default () => {
       link: "https://clvansa.de",
     },
     {
-      img: "/protfolio.jpg",
+      img: "/office.jpg",
       title: "Portfolio",
       desc: "Website  adaptable to all devices, with ui components and animated interactions",
       link: "https://portfolio.clvansa.de",
@@ -42,6 +42,7 @@ export default () => {
                 borderRadius: "20px",
                 width: "100%",
                 height: "250px",
+                objectFit: "cover",
               }}
               alt={`Slide ${i}`}
             />

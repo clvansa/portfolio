@@ -143,6 +143,9 @@ const SubTitle = styled.h5`
 
 const Animation = (random) => keyframes`
   
+  0% {
+    transform: rotate(-${random}deg) scale(1.5) ;
+  }
   25% {
     transform: rotate(-${random}deg) scale(1.5) ;
   }
@@ -184,6 +187,7 @@ const Letter = styled.span`
 
   &:hover {
     /* animation: letter 1s alternate linear; */
+    /* animation-iteration-count: infinite; */
     animation: ${(props) => Animation(props.random)} 1s infinite ease-in-out;
     color: red;
   }
