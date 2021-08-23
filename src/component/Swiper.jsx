@@ -47,7 +47,6 @@ export default () => {
         >
           <Box style={{ padding: "40px 5px", marginTop: 10 }}>
             <img
-              // src={`https://picsum.photos/id/${i + 1}/500/300`}
               src={item.img}
               style={{
                 // listStyle: "none",
