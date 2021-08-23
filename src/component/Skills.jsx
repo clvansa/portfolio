@@ -7,7 +7,6 @@ import Translate from "react-translate-component";
 import { BiCodeCurly } from "react-icons/bi";
 
 const Skills = () => {
-
   return (
     <Container>
       <SkillsItems>
@@ -43,22 +42,6 @@ const Skills = () => {
         </SkillsItem>
         <SkillProgress type={"backend"} />
       </SkillsItems>
-
-      {/* <SkillsItems>
-        <SkillsItem>
-          <SkillsItemLeft>
-            <CodeIcon />
-            <SkillsBox>
-              <SkillsTitle>Designer </SkillsTitle>
-              <SkillsSubtitle>More than 2 years</SkillsSubtitle>
-            </SkillsBox>
-          </SkillsItemLeft>
-          <IconButtonCss onClick={() => handleToggle("backend")}>
-            {openDesigner ? <ExpandLess /> : <ExpandMore />}
-          </IconButtonCss>
-        </SkillsItem>
-        {openDesigner && <SkillProgress type={type} />}
-      </SkillsItems> */}
     </Container>
   );
 };
@@ -81,7 +64,6 @@ const Container = styled.div`
   @media (max-width: 768px) {
     padding: 40px 20px;
   }
-
 `;
 
 const SkillsItems = styled.div`
@@ -92,18 +74,15 @@ const SkillsItems = styled.div`
   @media (max-width: 1400px) {
     padding-right: 40px;
     padding-bottom: 20px;
-
   }
 
   @media (max-width: 768px) {
     padding: 10px;
     padding-bottom: 20px;
-
   }
 `;
 const SkillsItem = styled.div`
   display: flex;
-
 `;
 const SkillsBox = styled.div``;
 const SkillsItemLeft = styled.div`
@@ -148,8 +127,6 @@ const BiCodeCurlyIcon = styled(BiCodeCurly)`
   }
 `;
 
-
 const IconButtonCss = styled(IconButton)`
   color: white !important;
 `;
-

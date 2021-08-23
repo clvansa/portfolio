@@ -34,4 +34,16 @@ export const data = [
         type: "frontend",
 
     },
+    {
+        title: "React",
+        completed: 80,
+        type: "frontend",
+
+    },
+    {
+        title: "React Native",
+        completed: 70,
+        type: "frontend",
+
+    },
 ]

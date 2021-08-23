@@ -92,14 +92,12 @@ function App() {
             <Center>
               <Title>
                 <Translate content="qualification.title" />
-
               </Title>
               <Timeline />
             </Center>
             <Bottom>
               <Title id="project" ref={projectRef} style={{ color: "#2b2a30" }}>
                 <Translate content="project.title" />
-
               </Title>
               <SwiperConainer >
 
@@ -247,7 +245,7 @@ const Center = styled.div`
 
 const Bottom = styled.div`
   background-color:#b1afb0;
-  min-height: 60vh;
+  min-height: 65vh;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -292,6 +290,7 @@ const ContainerInnerBottom = styled.div`
 const Title = styled.h2`
 text-align: center;
 padding: 20px 0;
+
 
 `
 

@@ -12,7 +12,7 @@ export default () => {
     {
       img: "/2.png",
       title: "Social media",
-      desc: "Social media website with modern style adaptable to all devices, chating, call , post ...  ",
+      desc: "Social media website with modern style adaptable to all devices, chating, call , post ...  (MERN)",
       link: "https://clvansa.de",
     },
     {
@@ -20,6 +20,18 @@ export default () => {
       title: "Portfolio",
       desc: "Website  adaptable to all devices, with ui components and animated interactions",
       link: "https://portfolio.clvansa.de",
+    },
+    {
+      img: "/agency.png",
+      title: "Agency Template",
+      desc: "Website  adaptable to all devices, with ui components and animated interactions",
+      link: "https://agency.clvansa.de",
+    },
+    {
+      img: "/financy.png",
+      title: "Financy",
+      desc: "Website  adaptable to all devices, with ui components and animated interactions for accouting",
+      link: "https://financy.clvansa.de",
     },
   ];
 

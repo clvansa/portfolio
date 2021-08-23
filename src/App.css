@@ -43,7 +43,6 @@ body {
   .swiper-container {
     width: 350px !important;
     height: 470px;
-
   }
 }
 
@@ -51,6 +50,7 @@ body {
   .swiper-container {
     width: 280px !important;
     height: 500px;
+    bottom:-10px;
   }
 }
 
