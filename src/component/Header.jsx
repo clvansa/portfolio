@@ -4,10 +4,15 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import EmailIcon from "@material-ui/icons/Email";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
+import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
 import counterpart from "counterpart";
+import  { onLocaleChange } from "react-translate-component";
+
 
 const Header = ({ homeRef, aboutRef, skillsRef, contactRef, projectRef }) => {
   const [active, setActive] = useState("home");
+  const [localChange, setLocalChange] = useState('en');
+
 
   const handleDirect = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
@@ -23,6 +28,16 @@ const Header = ({ homeRef, aboutRef, skillsRef, contactRef, projectRef }) => {
     document.addEventListener("scroll", (e) => window.pageYOffset < 100 && setActive("home"));
 
   }, [])
+
+  useEffect(() => {
+    setLocalChange(localStorage.getItem("lang"));
+    onLocaleChange((lang) => {
+      setLocalChange(lang);
+    });
+
+  },[])
+
+
 
   return (
     <Container>
@@ -76,7 +91,7 @@ const Header = ({ homeRef, aboutRef, skillsRef, contactRef, projectRef }) => {
               </Select>
             </HeaderIcon>
             <a href="https://github.com/clvansa" target="_blank">
-              <HeaderIcon>
+              <HeaderIcon title="Github">
                 <GitHubIcon />
               </HeaderIcon>
             </a>
@@ -84,13 +99,18 @@ const Header = ({ homeRef, aboutRef, skillsRef, contactRef, projectRef }) => {
               href="https://www.linkedin.com/in/majd-makkieh-6737a761/"
               target="_blank"
             >
-              <HeaderIcon>
+              <HeaderIcon title="Linkedin">
                 <LinkedInIcon />
               </HeaderIcon>
             </a>
             <a href="mailto:clvansa@gmail.com">
-              <HeaderIcon>
+              <HeaderIcon title="Send Email">
                 <EmailIcon />
+              </HeaderIcon>
+            </a>
+            <a href={`./Kontaktdaten ${localChange}.pdf`} download={`${localChange === 'en'? 'CV ': 'lebenslauf'}`}>
+              <HeaderIcon title="Download my CV">
+                <PictureAsPdfIcon />
               </HeaderIcon>
             </a>
           </HeaderIcons>
