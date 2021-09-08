@@ -14,7 +14,7 @@ export default {
         t2: 'DCI Digital Career Institute gGmbH in Berlin',
         d2: 'SEPT 2019 - OCT 2019',
         p2: 'Qualification "test center for digital professions" for training as a web developer',
-        t3: 'Udacity (Online-Kurs)',
+        t3: 'Udacity (Online-Course)',
         d3: 'MAY 2018 - AUG 2018',
         p3: 'Further training to become a programmer - Full Stack Developer Track',
         t4: 'Degree in Economics and Commerce in Damascus, Syria',

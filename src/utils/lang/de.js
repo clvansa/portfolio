@@ -17,7 +17,7 @@ export default {
         t2: 'DCI Digital Career Institute gGmbH in Berlin',
         d2: 'SEPT 2019 – OKT 2019',
         p2: 'Qualifizierung „Erprobungscenter Digitale Berufe“ für die Ausbildung zum Web Developer',
-        t3: 'Udacity (Online-Course)',
+        t3: 'Udacity (Online-Kurs)',
         d3: 'MAI 2018 – AUG 2018',
         p3: 'Weiterbildung zum Programmierer - Full Stack Developer Track',
         t4: 'Diplom in Wirtschaft und Handel in Damaskus, Syrien',
