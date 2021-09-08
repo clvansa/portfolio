@@ -7,7 +7,7 @@ export default {
         t3: 'Web Entwickler',
         subtitle: 'Full-Stack Web Entwickler',
         aboutMe: 'Full-Stack Web Entwickler mit mehr als 7Jahren Berufserfahrung in der Buchhaltung.',
-        popup: 'Derzeit bin ich auf der Suche nach einer Vollzeitanstellung im Bereich der Webentwicklung und für neue Herausforderungen bereit. . Ein hohes Maß an Professionalität und Flexibilität sind mir wichtig. Ich habe die Fähigkeit, mir Programmiersysteme bzw. -sprachen autodidaktisch zu erschließen.'
+        popup: 'Derzeit bin ich auf der Suche nach einer Vollzeitanstellung im Bereich der Webentwicklung und für neue Herausforderungen bereit. . Ein hohes Maß an Professionalität und Flexibilität sind mir wichtig. Ich habe die Fähigkeit, mir Programmiersysteme bzw. -sprachen autodidaktisch zu erschließen. Derzeit trainiere ich in PHP, Laravel, Angular und WordPress.'
     },
     qualification: {
         title: 'Qualifizierung',
@@ -17,12 +17,12 @@ export default {
         t2: 'DCI Digital Career Institute gGmbH in Berlin',
         d2: 'SEPT 2019 – OKT 2019',
         p2: 'Qualifizierung „Erprobungscenter Digitale Berufe“ für die Ausbildung zum Web Developer',
-        t3: 'Udacity (Online-Kurs)',
+        t3: 'Udacity (Online-Course)',
         d3: 'MAI 2018 – AUG 2018',
         p3: 'Weiterbildung zum Programmierer - Full Stack Developer Track',
         t4: 'Diplom in Wirtschaft und Handel in Damaskus, Syrien',
         d4: 'SEPT 2005 – AUG 2008',
-        p4: '- Technische Fachhochschule für Buchhaltung und Finanzierung - Schwerpunkt „Buchhaltung“ mit dem Prädikat „gut“',
+        p4: 'Technische Fachhochschule für Buchhaltung und Finanzierung - Schwerpunkt „Buchhaltung“ mit dem Prädikat „gut“',
 
     },
     skills: {

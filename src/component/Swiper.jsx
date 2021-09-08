@@ -33,6 +33,12 @@ export default () => {
       desc: "Website  adaptable to all devices, with ui components and animated interactions for accouting",
       link: "https://financy.clvansa.de",
     },
+    {
+      img: "/organic.png",
+      title: "Organic",
+      desc: "Website  adaptable to all devices, with ui components and animated interactions for accouting",
+      link: "https://organic.clvansa.de",
+    },
   ];
 
   const slides = [];
